@@ -16,7 +16,7 @@
     --container-color: hsl(207, 4%, 95%);
     /* Change the first number */
     /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
-    --gradient-color: linear-gradient(180deg, hsla(356, 48%, 72%, 0), hsla(356, 65%, 65%, 1));
+    --gradient-color: linear-gradient(180deg, hsla(356, 48%, 72%, 0), hsla(207, 65%, 65%, 1));
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: 'Roboto', sans-serif;
@@ -42,7 +42,7 @@
 /* Responsive typography */
 
 @media screen and (min-width: 1024px) {
-     :root {
+    :root {
         --biggest-font-size: 3rem;
         --h1-font-size: 2.25rem;
         --h2-font-size: 1.5rem;
@@ -546,6 +546,7 @@ body.dark-theme {
 .qualification__name {
     font-size: var(--normal-font-size);
     margin-bottom: 1.25rem;
+    text-align: center;
 }
 
 .qualification__country,
@@ -553,6 +554,7 @@ body.dark-theme {
     display: block;
     font-size: var(--small-font-size);
     color: var(--text-color-light);
+    text-align: center;
 }
 
 .qualification__country {
@@ -654,9 +656,10 @@ body.dark-theme {
 }
 
 .projects__title {
-    font-size: var(--h2-font-size);
-    margin-bottom: 1.25rem;
-    margin: .5rem 0 1.25rem;
+    font-size: var(--h3-font-size);
+    margin-bottom: 1rem;
+    margin: .5rem 0 1rem;
+    text-align: center;
 }
 
 .projects__button {
@@ -891,7 +894,8 @@ body.dark-theme {
     column-gap: .5rem;
     color: var(--title-color);
     font-size: var(--small-font-size);
-    color: #f9004d;
+    color: #002ef9;
+    /* color: #f9004d; */
 }
 
 .contact__button i {
@@ -1091,7 +1095,7 @@ body.dark-theme {
 
 /*=============== BREAKPOINTS ===============*/
 
-@media screen and (max-width: 340px) {
+/* @media screen and (max-width: 340px) {
     .container {
         margin-inline: 1rem;
     }
@@ -1108,17 +1112,39 @@ body.dark-theme {
         width: 200px;
         justify-self: center;
     }
-}
+} */
 
 
 /* For small devices */
+@media screen and (max-width: 340px){
+    .container{
+        margin-inline: 1rem;
+    }
 
+    .nav__menu{
+        padding-bottom: 4rem;
+    }
+
+    .nav__list{
+        gap: 1rem 1.25rem;
+    }
+
+    .skills__info{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project__img{
+        width: 200px;
+        justify-self: center;
+    }
+    
+}
 
 /* For medium devices */
 
 @media screen and (min-width: 576px) {
     .nav,
-    .mav__menu {
+    .nav__menu {
         width: 380px;
     }
     .nav {
@@ -1143,6 +1169,34 @@ body.dark-theme {
 }
 
 @media screen and (min-width: 767px) {
+    .home__container{
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    .home__data{
+        order: 2;
+    }
+
+    .home__info:nth-child(3){
+            order: 3;
+            text-align: right;
+        }
+
+    .home__info{
+        margin-top: 10rem;
+        margin-bottom: 8rem;
+    }
+
+    .home__info-description{
+        padding-right: 0;
+    }
+
+    /* .skills__container{
+        grid-template-columns: repeat(2, max-content);
+    }
+
+    .skills__container{
+        column-gap: 5rem;
+    } */
     .skills__container,
     .qualification__container,
     .services__container,
@@ -1220,7 +1274,9 @@ body.dark-theme {
     .section {
         padding-block: 8rem 0;
     }
-    .home__title {
+
+    
+    h1.home__title {
         font-size: 2.2rem;
     }
     .scrollup {
